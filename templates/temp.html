@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>常模計算機</title>
+</head>
+<body>
+	<form method='post' action="/">
+		<b>年紀:</b><input type="age" name="age" placeholder="age" size="15">
+		<br>
+		<b>性別:</b><input type="gender" name="gender" placeholder="male:1，female:2" size="15">
+		<br>
+		<b>教育程度:</b><input type="education" name="education" placeholder="education" size="10">
+		<br>
+		<table style="border:1px #cccccc solid; font-size:10px;" cellpadding="5" border='1'>
+			<tbody>
+		        <tr>
+		            <td bgcolor=#ACD6FF><b>General cognition and mood</b></td>
+		            <td bgcolor=#ACD6FF><b>Test Result</b></td>
+		            <td bgcolor=#ACD6FF><b>Z score</b></td>
+		            <td bgcolor=#ACD6FF><b>百分比%</b></td>
+		            <td bgcolor=#ACD6FF><b>I</b></td>
+		            <td bgcolor=#ACD6FF><b>B</b></td>
+		            <td bgcolor=#ACD6FF><b>L</b></td>
+		            <td bgcolor=#ACD6FF><b>A</b></td>
+		            <td bgcolor=#ACD6FF><b>H</b></td>
+		            <td bgcolor=#ACD6FF><b>S</b></td>
+		            <td bgcolor=#ACD6FF><b>REF</b></td>
+		        </tr>
+		        <tr>
+		            <td bgcolor=#ACD6FF><b>MEMORY</b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b>I</b></td>
+		            <td bgcolor=#ACD6FF><b>B</b></td>
+		            <td bgcolor=#ACD6FF><b>L</b></td>
+		            <td bgcolor=#ACD6FF><b>A</b></td>
+		            <td bgcolor=#ACD6FF><b>H</b></td>
+		            <td bgcolor=#ACD6FF><b>S</b></td>
+		            <td bgcolor=#ACD6FF><b>REF</b></td>
+		        </tr>
+		    	<tr>
+		            <td rowspan="3"><b>12-item memory test (TVLT)</b></td>
+		            <td>Learning 1-3 <input type="score" name="TVLTIR score" placeholder="score" size="3"></td>
+		            <td>{{TVLTIRzs}}</td>
+		            <td>{{TVLTIR100}}</td>
+		            <td name='TVLTIRI'></td>
+		            <td name='TVLTIRB'></td>
+		            <td name='TVLTIRL'></td>
+		            <td name='TVLTIRA'></td>
+		            <td name='TVLTIRH'></td>
+		            <td name='TVLTIRS'></td>
+		            <td>US</td>
+		        </tr>
+		        <tr>
+		            <td>Delayed recall <input type="score" name="TVLTDR score" placeholder="score" size="3"></td>
+		            <td>{{TVLTDRzs}}</td>
+		            <td>{{TVLTDR100}}</td>
+		            <td name='TVLTDRI'></td>
+		            <td name='TVLTDRB'></td>
+		            <td name='TVLTDRL'></td>
+		            <td name='TVLTDRA'></td>
+		            <td name='TVLTDRH'></td>
+		            <td name='TVLTDRS'></td>
+		            <td>US</td>
+		        </tr>
+		        <tr>
+		            <td>DI <input type="score" name="TVLTDI score" placeholder="score" size="3"></td>
+		            <td>{{TVLTDIzs}}</td>
+		            <td>{{TVLTDI100}}</td>
+		            <td name='TVLTDII'></td>
+		            <td name='TVLTDIB'></td>
+		            <td name='TVLTDIL'></td>
+		            <td name='TVLTDIA'></td>
+		            <td name='TVLTDIH'></td>
+		            <td name='TVLTDIS'></td>
+		            <td>US</td>
+		        </tr>
+		    	<tr>
+		            <td rowspan="2"><b>Logical memory</b></td>
+		            <td>Immediate <input type="score" name="LM-1 score" placeholder="score" size="3"> /75</td>
+		            <td>{{lm1zs}}</td>
+		            <td>{{lm1100}}</td>
+		            <td name='lm1I'></td>
+		            <td name='lm1B'></td>
+		            <td name='lm1L'></td>
+		            <td name='lm1A'></td>
+		            <td name='lm1H'></td>
+		            <td name='lm1S'></td>
+		            <td>TW</td>
+
+		        </tr>
+		        <tr>
+		            <td>Delayed <input type="score" name="LM-2 score" placeholder="score" size="3"> /50</td>
+		            <td>{{lm2zs}}</td>
+		            <td>{{lm2100}}</td>
+		            <td name='lm2I'></td>
+		            <td name='lm2B'></td>
+		            <td name='lm2L'></td>
+		            <td name='lm2A'></td>
+		            <td name='lm2H'></td>
+		            <td name='lm2S'></td>
+		            <td>TW</td>
+		        </tr>
+		        <tr>
+		            <td><b>Benson figue recall</b></td>
+		            <td><input type="score" name="BFR score" placeholder="score" size="3"> /17</td>
+		            <td>{{BFRzs}}</td>
+		            <td>{{BFR100}}</td>
+		            <td name='BFRI'></td>
+		            <td name='BFRB'></td>
+		            <td name='BFRL'></td>
+		            <td name='BFRA'></td>
+		            <td name='BFRH'></td>
+		            <td name='BFRS'></td>
+		            <td>US</td>
+		        </tr>
+		        <tr>
+		            <td bgcolor=#ACD6FF><b>EXECUTIVE FUNCTION</b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b>I</b></td>
+		            <td bgcolor=#ACD6FF><b>B</b></td>
+		            <td bgcolor=#ACD6FF><b>L</b></td>
+		            <td bgcolor=#ACD6FF><b>A</b></td>
+		            <td bgcolor=#ACD6FF><b>H</b></td>
+		            <td bgcolor=#ACD6FF><b>S</b></td>
+		            <td bgcolor=#ACD6FF><b>REF</b></td>
+		        </tr>
+		        <tr>
+		            <td><b>Digit forward</b></td>
+		            <td><input type="score" name="DSF score" placeholder="score" size="3"> /16</td>
+		            <td>{{bsfzs}}</td>
+		            <td>{{bsf100}}</td>
+		            <td name='bsfI'></td>
+		            <td name='bsfB'></td>
+		            <td name='bsfL'></td>
+		            <td name='bsfA'></td>
+		            <td name='bsfH'></td>
+		            <td name='bsfS'></td>
+		            <td>TW</td>
+		        </tr>
+		        <tr>
+		            <td><b>Digit backward</b></td>
+		            <td><input type="score" name="DSB score" placeholder="score" size="3"> /16</td>
+		            <td>{{dsbzs}}</td>
+		            <td>{{dsb100}}</td>
+		            <td name='bsbI'></td>
+		            <td name='bsbB'></td>
+		            <td name='bsbL'></td>
+		            <td name='bsbA'></td>
+		            <td name='bsbH'></td>
+		            <td name='bsbS'></td>
+		            <td>TW</td>
+		        </tr>
+		        <tr>
+		            <td rowspan="4"><b>Color trails test part 1<br>(校正後)</b></td>
+		            <td>時間 <input type="score" name="CTT1-time score" placeholder="score" size="3"> 秒</td>
+		            <td>{{CTT1timezs}}</td>
+		            <td>{{CTT1time100}}</td>
+		            <td name='' rowspan="4"></td>
+		            <td name='' rowspan="4"></td>
+		            <td name='' rowspan="4"></td>
+		            <td name='' rowspan="4"></td>
+		            <td name='' rowspan="4"></td>
+		            <td name='' rowspan="4"></td>
+		            <td rowspan="4">TW</td>
+		        </tr>
+		        <tr>
+		        	<td>錯誤 <input type="score" name="CTT1-error score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT1errorzs}}</td>
+		            <td>{{CTT1error100}}</td>
+		        </tr>
+		        <tr>
+		        	<td>接近失誤 <input type="score" name="CTT1-approach-error score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT1approacherrerzs}}</td>
+		            <td>{{CTT1approacherrer100}}</td>
+		        </tr>
+		        <tr>
+		        	<td>提示 <input type="score" name="CTT1-hint score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT1hintzs}}</td>
+		            <td>{{CTT1hint100}}</td>
+		        </tr>
+		        <tr>
+		            <td rowspan="5"><b>Color trails test part 2<br>(校正後)</b></td>
+		            <td>時間 <input type="score" name="CTT2-time score" placeholder="score" size="3"> 秒</td>
+		            <td>{{CTT2timezs}}</td>
+		            <td>{{CTT2time100}}</td>
+		            <td name='' rowspan="5"></td>
+		            <td name='' rowspan="5"></td>
+		            <td name='' rowspan="5"></td>
+		            <td name='' rowspan="5"></td>
+		            <td name='' rowspan="5"></td>
+		            <td name='' rowspan="5"></td>
+		            <td rowspan="5">TW</td>
+		        </tr>
+		        <tr>
+		        	<td>顏色錯誤 <input type="score" name="CTT2-color-error score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT2colorerrorzs}}</td>
+		            <td>{{CTT2colorerror100}}</td>
+		        </tr>
+		        <tr>
+		        	<td>數字錯誤 <input type="score" name="CTT2-number-error score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT2numbererrorzs}}</td>
+		            <td>{{CTT2numbererror100}}</td>
+		        </tr>
+		        <tr>
+		        	<td>接近失誤 <input type="score" name="CTT2-approach-error score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT2approacherrorzs}}</td>
+		            <td>{{CTT2approacherror100}}</td>
+		        </tr>
+		        <tr>
+		        	<td>提示 <input type="score" name="CTT2-hint score" placeholder="score" size="3"> 次</td>
+		            <td>{{CTT2hintzs}}</td>
+		            <td>{{CTT2hint100}}</td>
+		        </tr>
+		        <tr>
+		            <td><b>CTT 干擾指數(校正後)</b></td>
+		            <td><input type="score" name="CTT-interference-index score" placeholder="score" size="3"></td>
+		            <td>{{CTTinterferenceindexzs}}</td>
+		            <td>{{CTTinterferenceindex100}}</td>
+		            <td name=''></td>
+		            <td name=''></td>
+		            <td name=''></td>
+		            <td name=''></td>
+		            <td name=''></td>
+		            <td name=''></td>
+		            <td>TW</td>
+		        </tr>
+		        <tr>
+		            <td><b>Digit symbol</b></td>
+		            <td><input type="score" name="symbol score" placeholder="score" size="3"> /135</td>
+		            <td>{{symbolzs}}</td>
+		            <td>{{symbol100}}</td>
+		            <td name='symbolI'></td>
+		            <td name='symbolB'></td>
+		            <td name='symbolL'></td>
+		            <td name='symbolA'></td>
+		            <td name='symbolH'></td>
+		            <td name='symbolS'></td>
+		            <td>TW</td>
+		        </tr>
+		        <tr>
+		            <td bgcolor=#ACD6FF><b>VISUOSPATIAL</b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b>I</b></td>
+		            <td bgcolor=#ACD6FF><b>B</b></td>
+		            <td bgcolor=#ACD6FF><b>L</b></td>
+		            <td bgcolor=#ACD6FF><b>A</b></td>
+		            <td bgcolor=#ACD6FF><b>H</b></td>
+		            <td bgcolor=#ACD6FF><b>S</b></td>
+		            <td bgcolor=#ACD6FF><b>REF</b></td>
+		        </tr>
+		        <tr>
+		            <td><b>Benson figue copy</b></td>
+		            <td><input type="score" name="BFC score" placeholder="score" size="3"> /17</td>
+		            <td>{{BFCzs}}</td>
+		            <td>{{BFC100}}</td>
+		            <td name='BFCI'></td>
+		            <td name='BFCB'></td>
+		            <td name='BFCL'></td>
+		            <td name='BFCA'></td>
+		            <td name='BFCH'></td>
+		            <td name='BFCS'></td>
+		            <td>US</td>
+		        </tr>
+		        <tr>
+		            <td><b>Clock drawing</b></td>
+		            <td><input type="score" name="CDT score" placeholder="score" size="3"> /10</td>
+		            <td>{{CDTzs}}</td>
+		            <td>{{CDT100}}</td>
+		            <td name='CDTI'></td>
+		            <td name='CDTB'></td>
+		            <td name='CDTL'></td>
+		            <td name='CDTA'></td>
+		            <td name='CDTH'></td>
+		            <td name='CDTS'></td>
+		            <td>US</td>
+		        </tr>
+		        <tr>
+		            <td bgcolor=#ACD6FF><b>LANGUAGE</b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b></b></td>
+		            <td bgcolor=#ACD6FF><b>I</b></td>
+		            <td bgcolor=#ACD6FF><b>B</b></td>
+		            <td bgcolor=#ACD6FF><b>L</b></td>
+		            <td bgcolor=#ACD6FF><b>A</b></td>
+		            <td bgcolor=#ACD6FF><b>H</b></td>
+		            <td bgcolor=#ACD6FF><b>S</b></td>
+		            <td bgcolor=#ACD6FF><b>REF</b></td>
+		        </tr>
+		    </tbody>
+		</table>
+		<button id="measure" type='submit'>送出</button>
+	</form>
+	<br>
+	<font size="5", color="red">{{message}}</font>
+</body>
+</html>
